@@ -38,6 +38,8 @@ if (Number.isNaN(length) ) {
   
 
 }
+
+
 var hasLowerCase = confirm("Click OK to confirm lowercase letter");
 var hasUpperCase = confirm("Click OK to confirm uppercase letter");
 var hasNumeric = confirm("Click OK to confirm numeric letter");
@@ -62,17 +64,25 @@ return userInput;
 
 
 
-  function generatePassword () {
-    var userOptions = passwordCriteria ();
-  }
+function generatePassword () {
+  var userOptions = passwordCriteria ();
+  
+// this property is returning null what am I missing here, says that defined
+  if (userOptions.lowerCaseLetter ==0)
 
-  if (userOptions)
+  return userOptions;
+// I am not even sure I comprehended your  instructions here....I am completely lost
+ for (var i = 0; i < length ; i++) {
+  var randomIndex = Math.floor(Math.random() * userOptions.length);
+  var random = userOptions[randomIndex]; 
+  lowerCaseLetter = lowerCaseLetter.concat(random)
+}
+
+return lowerCaseLetter
+}
     
 
 
-
-
-    
   
     
 
@@ -81,14 +91,16 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();//the function generate password is being called//
+  var password = generatePassword();
+  //the function generate password is being called//
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
 
-// Add event listener to generate button
+
+//Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 
