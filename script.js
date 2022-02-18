@@ -17,14 +17,15 @@
 
 // Assignment code here
 
-var lowerCaseLetter = ['a', 'b', 'c']
+var lowerCaseLetter = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n','o','p']
 var upperCaseLetter= ['A', 'B', 'C']
 var numeric= ['1', '2', '3']
 var specialCharacter= ['#', '%', '@']
-    
+// empty array and password string
+var array=[]   
+var password = "" 
  
- 
-function passwordCriteria () {
+function generatePassword () {
   var length =  parseInt(prompt("How many characters would you like your password to contain?"));
 if (length < 8 || length > 128) {
   alert("The length should between 8 and 128");
@@ -34,56 +35,54 @@ if (length < 8 || length > 128) {
 if (Number.isNaN(length) ) {
   alert("The length should between 8 and 128");
   return null;
- 
-  
 
 }
 
-
+// asking what type chararcter you desire
 var hasLowerCase = confirm("Click OK to confirm lowercase letter");
+  // if yes add to our empty array
+if (hasLowerCase) { 
+    array = array.concat(lowerCaseLetter)
+  }
+console.log(array)
 var hasUpperCase = confirm("Click OK to confirm uppercase letter");
+if (hasUpperCase) { 
+  array = array.concat(upperCaseLetter)
+}
+console.log(array)
 var hasNumeric = confirm("Click OK to confirm numeric letter");
+if (hasNumeric) { 
+  array = array.concat(numeric)
+}
+console.log(array)
 var hasSpecialCase = confirm("Click OK to confirm special characters letter");
+if (hasSpecialCase) { 
+  array = array.concat(specialCharacter)
+}
+console.log(array)
+// if no choice selected no password generate
 if (hasLowerCase === false && hasUpperCase === false && hasNumeric === false && hasSpecialCase === false){
 alert("Must select one type of character");
 return null;
 }
-
-var userInput = {
-  length: length, 
-  hasLowerCase: hasLowerCase,
-  hasUpperCase: hasUpperCase,
-  hasNumeric: hasNumeric,
-  hasSpecialCase: hasSpecialCase
-
-}
-return userInput;
-
-
-}
-
-
-
-function generatePassword () {
-  var userOptions = passwordCriteria ();
-  
-// this property is returning null what am I missing here, says that defined
-  if (userOptions.lowerCaseLetter ==0)
-
-  return userOptions;
-// I am not even sure I comprehended your  instructions here....I am completely lost
+else{
+  // for loop >> selecting number
  for (var i = 0; i < length ; i++) {
-  var randomIndex = Math.floor(Math.random() * userOptions.length);
-  var random = userOptions[randomIndex]; 
-  lowerCaseLetter = lowerCaseLetter.concat(random)
+  var random = Math.floor(Math.random() * array.length);
+  console.log(array.length)
+  password = password + array[random];
+  console.log(password)
 }
 
-return lowerCaseLetter
+return password
 }
-    
+
+}
 
 
-  
+
+
+
     
 
 // Get references to the #generate element
