@@ -51,7 +51,7 @@ if (hasUpperCase) {
   array = array.concat(upperCaseLetter)
 }
 console.log(array)
-var hasNumeric = confirm("Click OK to confirm numeric letter");
+var hasNumeric = confirm("Click OK to confirm numeric characters");
 // if yes add to our empty array
 if (hasNumeric) { 
   array = array.concat(numeric)
