@@ -2,6 +2,16 @@
 Password Generator
 
 
+Description:
+
+The generator randomly generates a password using the if statements, confirm, array, and for loop
+
+
+
+
+Website: https://chlovanna.github.io/Who-Are-You/
+
+
 
 
 
