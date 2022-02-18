@@ -17,10 +17,10 @@
 
 // Assignment code here
 
-var lowerCaseLetter = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n','o','p']
-var upperCaseLetter= ['A', 'B', 'C']
-var numeric= ['1', '2', '3']
-var specialCharacter= ['#', '%', '@']
+var lowerCaseLetter = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var upperCaseLetter= ['A', 'B', 'C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+var numeric= ['1', '2', '3', '4', '5', '6', '7', '8', '9','0']
+var specialCharacter= ['#', '%', '@', '!', '$','^', '*', '&']
 // empty array and password string
 var array=[]   
 var password = "" 
@@ -38,7 +38,7 @@ if (Number.isNaN(length) ) {
 
 }
 
-// asking what type chararcter you desire
+// asking what type of character you desire
 var hasLowerCase = confirm("Click OK to confirm lowercase letter");
   // if yes add to our empty array
 if (hasLowerCase) { 
@@ -46,16 +46,19 @@ if (hasLowerCase) {
   }
 console.log(array)
 var hasUpperCase = confirm("Click OK to confirm uppercase letter");
+// if yes add to our empty array
 if (hasUpperCase) { 
   array = array.concat(upperCaseLetter)
 }
 console.log(array)
 var hasNumeric = confirm("Click OK to confirm numeric letter");
+// if yes add to our empty array
 if (hasNumeric) { 
   array = array.concat(numeric)
 }
 console.log(array)
 var hasSpecialCase = confirm("Click OK to confirm special characters letter");
+// if yes add to our empty array
 if (hasSpecialCase) { 
   array = array.concat(specialCharacter)
 }
@@ -80,10 +83,7 @@ return password
 }
 
 
-
-
-
-    
+  
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
